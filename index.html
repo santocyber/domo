@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Geodésica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Calculadora de Geodésica</h1>
+  </header>
+
+  <main>
+    <form id="geodesicForm">
+      <label for="radius">Raio da Cúpula (em metros):</label>
+      <input type="number" id="radius" name="radius" min="1" step="0.1" required>
+
+      <label for="subdivision">Nível de Subdivisão:</label>
+      <select id="subdivision" name="subdivision">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+
+      <label for="geodesicType">Tipo de Geodésica:</label>
+      <select id="geodesicType" name="geodesicType">
+        <option value="sphere">Esfera Completa</option>
+        <option value="1/8">1/8 da Esfera</option>
+        <option value="2/8">2/8 da Esfera</option>
+        <option value="3/8">3/8 da Esfera</option>
+        <option value="4/8">4/8 da Esfera</option>
+        <option value="5/8">5/8 da Esfera</option>
+        <option value="6/8">6/8 da Esfera</option>
+      </select>
+
+
+
+      <button type="button" id="generate">Gerar Geodésica</button>
+    </form>
+
+    <div id="geodesic-info"></div>
+<div id="3d-viewer" style="position: relative; width: 100%; height: 500px;">
+  <div id="canvas-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
+</div>
+
+  </main>
+
+  <footer>
+    <p>Desenvolvido por SantoCyber</p>
+  </footer>
+  
+  
+<button id="exportDXF">Exportar para DXF</button>
+<button id="exportSTL">Exportar para STL</button>
+<button id="exportGroupSTL2D">Exportar Triângulos Iguais em 2D (STL)</button>
+<button id="exportToSVG">Exportar para SVG</button>
+<button id="exportToSVGlegenda">Exportar para SVG com legenda</button>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
